@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text animation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: 0;
+            font-family: 'poppins', Times, serif;
+        }
+       body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            background-color: black;
+        }
+        h1{
+            position: relative;
+            font-size: 8em;
+            color:#111 ;
+        }
+        h1::before{
+            content: attr(data-text);
+            position: absolute;
+            white-space: nowrap;
+            color: red;
+            overflow-x: hidden;
+            border-right: 4px solid #fff;
+            animation: text 8s linear  infinite;
+            filter: drop-shadow(0 0 20px #fff) drop-shadow(0 0 30px #fff);
+        }
+        @keyframes text {
+            0%,10%,100%{
+                width:0;
+            }
+            70%,90%{
+                width:100%;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <h1 data-text="&nbsp;&#127137; JEEVA BOSS &#127137;&nbsp;">&nbsp;&#x1F0A1; JEEVA BOSS &#127137;&nbsp;</h1>
+    
+</body>
+</html>
